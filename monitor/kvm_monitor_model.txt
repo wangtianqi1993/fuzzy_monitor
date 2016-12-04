@@ -1,0 +1,61 @@
+#在redis中以字符串的形式存储，在指定的时间段内以指定的时间间隔获取kvm信息，此信息整体作为字符串存入redis中
+
+key: "kvm_info"
+value:
+"[
+  {
+    "current_time": 1480344328.38
+    "notepad_1":{
+        "cpu_time": 12204
+        "cpu_user_rate": 0.71
+        "cpu_sys_rate": 0.03
+        "rx_bytes": 2213
+        "rx_packets": 21
+        "tx_bytes": 345
+        "tx_packets": 31
+        "max_mem": 4460
+        "used_mem": 4421
+    },
+     "notepad_2":{
+        "cpu_time": 12204
+        "cpu_user_rate": 0.71
+        "cpu_sys_rate": 0.03
+        "rx_bytes": 2213
+        "rx_packets": 21
+        "tx_bytes": 345
+        "tx_packets": 31
+        "max_mem": 4460
+        "used_mem": 4421
+    }
+
+  },
+  {
+    "current_time": 1480346328.38
+    "notepad_1":{
+        "cpu_time": 12204
+        "cpu_user_rate": 0.71
+        "cpu_sys_rate": 0.03
+        "rx_bytes": 2213
+        "rx_packets": 21
+        "tx_bytes": 345
+        "tx_packets": 31
+        "max_mem": 4460
+        "used_mem": 4421
+    },
+     "notepad_2":{
+        "cpu_time": 12204
+        "cpu_user_rate": 0.71
+        "cpu_sys_rate": 0.03
+        "rx_bytes": 2213
+        "rx_packets": 21
+        "tx_bytes": 345
+        "tx_packets": 31
+        "max_mem": 4460
+        "used_mem": 4421
+    }
+  }
+  .
+  .
+  .
+  .
+]"
