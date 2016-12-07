@@ -10,9 +10,9 @@ sleep 3
 echo ${a[0]}
 echo ${a[1]}
 
-# 读取/proc/meminfo文件，MemTotal – MemFree得到MEM使用量(MB)
-mem_use=`awk '/MemTotal/{total=$2}/MemFree/{free=$2}END{print (total-free)/total}'  /proc/meminfo`
-echo $mem_use
+# 读取/proc/meminfo文件，MemTotal – MemFree得到MEM使用率
+mem_use_rate=`awk '/MemTotal/{total=$2}/MemFree/{free=$2}END{print (total-free)/total}'  /proc/meminfo`
+echo $mem_use_rate
 
 #获得硬盘总的大小与剩余空间大小
 all_disk_space=`df -hl | grep /dev | awk '{print $2}'`

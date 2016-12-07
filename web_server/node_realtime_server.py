@@ -14,17 +14,17 @@ from monitor.node_realtime_info import node_realtime_info
 define('port', default=8999, help='run on the given port', type=int)
 
 
-class NodeRealTimeInfoWebService:
+class NodeRealTimeWebService:
     def start(self):
         tornado.options.parse_command_line()
-        # app = tornado.web.Application(handlers=[(r"/detector/(.*)", AdDetectorHandler)])
-        app = tornado.web.Application(handlers=[(r"/api/testsamplesystem/node_realtime_info?(.*)", NodeRealTimeInfoFunctionHandle)])
-        http_server = tornado.httpserver.HTTPServer(app)
-        http_server.listen(options.port, address='0.0.0.0')
+        node_realtime = tornado.web.Application(handlers=[(r"/api/manage/node_realtime_info?(.*)", NodeRealTimeInfoHandle)])
+        node_realtime_server = tornado.httpserver.HTTPServer(node_realtime)
+        node_realtime_server.listen(options.port, address='0.0.0.0')
+
         tornado.ioloop.IOLoop.instance().start()
 
 
-class NodeRealTimeInfoFunctionHandle(tornado.web.RequestHandler):
+class NodeRealTimeInfoHandle(tornado.web.RequestHandler):
 
     def post(self, api_type):
 
@@ -40,5 +40,5 @@ class NodeRealTimeInfoFunctionHandle(tornado.web.RequestHandler):
 
 
 if __name__ == "__main__":
-    test = NodeRealTimeInfoWebService()
+    test = NodeRealTimeWebService()
     test.start()
