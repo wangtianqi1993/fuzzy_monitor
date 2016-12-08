@@ -16,10 +16,16 @@ MONITOR_PEROID = 3
 NET_NAME = 'eth0'
 
 # 系统内各台机器的名字，以此来计算系统的平均负载信息
-SYSTEM_MACHINE_NAME = ["storage1"]
+SYSTEM_MACHINE_NAME = ["storage1", "storage2"]
+
+# 用来计算客户端链接数的机器名字，一般为master
+CLIENT_LINK_MACNHIE = ["storage1"]
 
 DISK_ALL_SPACE = 100
 CPU_KERNEL_NUMS = 32
 MEM_ALL_SPACE = 100
 
 FASTDFSPORT = '8000'
+REDIS_SYSTEM_KEY = 'system'
+
+FASTDFS_PEROID = 3

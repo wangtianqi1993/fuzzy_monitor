@@ -12,7 +12,7 @@ from config.config import NET_NAME
 from config.config import FASTDFSPORT
 from util.redis_queue import RedisQueue
 
-redis_queue = RedisQueue("storage1")
+redis_queue = RedisQueue("storage2")
 # 可以再建其他节点名字的消息队列,不同机器上该脚本的redis队列key为相应机器上的IP，连接的redis的ip是相同的
 
 
